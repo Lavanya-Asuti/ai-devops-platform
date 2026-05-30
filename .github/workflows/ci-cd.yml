@@ -1,4 +1,4 @@
-name: CI-CD Pipeline
+name: AI DevOps CI/CD Pipeline
 
 on:
   push:
@@ -19,11 +19,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r app/requirements.txt
+          pip install fastapi uvicorn prometheus-client
 
-      - name: Run basic tests
+      - name: Run basic import test
         run: |
-          python -c "import app.main"
+          python -c "from app.main import app; print('App imported successfully')"
 
   docker:
     needs: build
@@ -36,5 +36,5 @@ jobs:
       - name: Build Docker image
         run: docker build -t ai-devops-platform .
 
-      - name: Verify image
+      - name: Check Docker image
         run: docker images
