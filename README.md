@@ -282,45 +282,39 @@ Configured rule selectors and validated Prometheus operator configuration.
 
 ### Application Running
 
-Insert screenshot:
-
-screenshots/application-homepage.png
+![Application Running](screenshots/Application-Homepage.png)
 
 ### Kubernetes Pods
 
-Insert screenshot:
+![Kubernetes Pods](screenshots/Kubernetes-Pods.png)
 
-screenshots/kubernetes-pods.png
+### Kubernetes Services
+
+![Kubernetes Services](screenshots/Kubernetes-Services.png)
 
 ### Prometheus Targets
 
-Insert screenshot:
-
-screenshots/prometheus-targets.png
+![Prometheus Targets](screenshots/Prometheus-Targets.png)
 
 ### Prometheus Query Results
 
-Insert screenshot:
-
-screenshots/prometheus-queries.png
+![Prometheus Query Results](screenshots/Prometheus-Queries.png)
 
 ### Grafana Dashboard
 
-Insert screenshot:
-
-screenshots/grafana-dashboard.png
+![Grafana Dashboard](screenshots/Grafana-Dashboard.png)
 
 ### Alert Rules
 
-Insert screenshot:
-
-screenshots/prometheus-alert-rules.png
+![Alert Rules](screenshots/Arometheus-Alert.png)
 
 ### AWS EKS Cluster
 
-Insert screenshot:
+![AWS EKS Cluster](screenshots/AWS-EKS-Cluster.png)
 
-screenshots/aws-eks-cluster.png
+### Incident Summary
+
+![Incident Summary](screenshots/Incident-Summary.png)
 
 ---
 
