@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import Response
 from prometheus_client import Counter, generate_latest
 from app.incident_analyzer import summarize_logs
+from prometheus_client import Counter
 import logging
 import random
 
@@ -13,9 +14,9 @@ logging.basicConfig(
 
 app = FastAPI()
 
-REQUEST_COUNT = Counter(
-    "app_requests_total",
-    "Total application requests"
+request_count = Counter(
+    "http_requests_total",
+    "Total HTTP Requests"
 )
 
 INCIDENTS = [
@@ -30,7 +31,7 @@ INCIDENTS = [
 @app.get("/")
 def home():
 
-    REQUEST_COUNT.inc()
+    request_count.inc()
 
     event = random.choice(INCIDENTS)
 
@@ -57,9 +58,6 @@ def metrics():
         media_type="text/plain"
     )
     
-@app.get("/")
-def root():
-    return {"message": "AI DevOps Platform Running"}
 
 @app.get("/incident-summary")
 def incident_summary():

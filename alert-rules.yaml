@@ -1,0 +1,35 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: ai-devops-alerts
+  namespace: default
+spec:
+  groups:
+  - name: ai-devops.rules
+    rules:
+
+    - alert: ServiceDown
+      expr: up == 0
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Service is down"
+        description: "A target is down in AI DevOps Platform"
+
+    - alert: HighRequestRate
+      expr: rate(http_requests_total[5m]) > 10
+      for: 2m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High traffic detected"
+        description: "Request rate is high"
+
+    - alert: HighMemoryUsage
+      expr: process_resident_memory_bytes > 150000000
+      for: 2m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High memory usage"

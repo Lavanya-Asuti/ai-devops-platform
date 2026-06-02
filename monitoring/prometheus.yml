@@ -8,4 +8,4 @@ scrape_configs:
 
     static_configs:
       - targets:
-          - ai-devops-service:80
+        - ai-devops-service.default.svc.cluster.local:80
