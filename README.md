@@ -282,7 +282,7 @@ Configured rule selectors and validated Prometheus operator configuration.
 
 ### Application Running
 
-![Application Running](screenshots/Application-Homepage.png)
+![Application Running](screenshots/Application-HomePage.png)
 
 ### Kubernetes Pods
 
